@@ -1,0 +1,6 @@
+{
+  "name": "FragDealz",
+  "description": "Premium multi-brand perfume retailer offering 100% authentic designer and Middle Eastern fragrances.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
