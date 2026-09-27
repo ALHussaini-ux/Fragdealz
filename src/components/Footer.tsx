@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Mail, Check, ShieldCheck, Instagram, Facebook, Twitter, Phone, MapPin } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 import { BRANDS } from '../data/brands';
+import { FragDealzLogo } from './FragDealzLogo';
 
 export const Footer: React.FC = () => {
   const { navigateToShop, navigateToBrand, setIsAuthenticityModalOpen, setIsAccountOpen } = useStore();
@@ -185,6 +186,9 @@ export const Footer: React.FC = () => {
 
           {/* Column 4: ABOUT & AUTHENTICITY */}
           <div>
+            <div className="mb-3">
+              <FragDealzLogo className="h-6 w-auto" />
+            </div>
             <h4 className="font-serif text-sm font-bold tracking-widest uppercase text-white mb-4">
               ABOUT FRAGDEALZ
             </h4>

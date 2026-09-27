@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 import { BRANDS } from '../data/brands';
+import { FragDealzLogo } from './FragDealzLogo';
 
 export const Header: React.FC = () => {
   const { 
@@ -68,15 +69,13 @@ export const Header: React.FC = () => {
             <Menu className="w-5 h-5 stroke-[1.5]" />
           </button>
 
-          {/* Clean Logo on mobile */}
+          {/* Custom Gold Logo on mobile */}
           <div 
             id="brand-logo-mobile-btn"
             onClick={navigateToHome}
-            className="cursor-pointer text-center select-none"
+            className="cursor-pointer flex items-center justify-center select-none py-1"
           >
-            <span className="text-lg font-serif tracking-[0.15em] text-[#111111] font-medium block">
-              FRAGDEALZ
-            </span>
+            <FragDealzLogo className="h-7 w-auto" />
           </div>
 
           <div className="flex items-center -mr-2">
@@ -111,14 +110,9 @@ export const Header: React.FC = () => {
           <div 
             id="brand-logo-btn"
             onClick={navigateToHome}
-            className="cursor-pointer flex flex-col items-start select-none group shrink-0"
+            className="cursor-pointer flex items-center select-none group shrink-0"
           >
-            <span className="text-2xl font-serif tracking-[0.18em] text-[#111111] font-normal">
-              FRAGDEALZ
-            </span>
-            <span className="text-[10px] tracking-[0.2em] text-[#777777] uppercase font-light">
-              Fine Fragrance Purveyor
-            </span>
+            <FragDealzLogo className="h-9 lg:h-10 w-auto" showSubtitle={true} />
           </div>
 
           {/* Center Search Input */}
@@ -348,9 +342,7 @@ export const Header: React.FC = () => {
           <div className="w-full max-w-[320px] h-full bg-white flex flex-col justify-between shadow-2xl animate-slideRight overflow-hidden">
             {/* Drawer Header */}
             <div className="p-4 border-b border-[#E8E5DF] flex items-center justify-between">
-              <span className="font-serif text-base tracking-widest text-[#111111]">
-                FRAGDEALZ
-              </span>
+              <FragDealzLogo className="h-7 w-auto" />
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-10 h-10 flex items-center justify-center text-[#777777] hover:text-[#111111]"
