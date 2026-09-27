@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Check, ShieldCheck, Instagram, Facebook, Twitter, Phone, MapPin } from 'lucide-react';
+import { Check, ShieldCheck, Instagram, Facebook, Twitter, Phone, MapPin } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 import { BRANDS } from '../data/brands';
 import { FragDealzLogo } from './FragDealzLogo';
@@ -21,18 +21,24 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#111111] text-[#FAF9F6] pt-16 pb-24 lg:pb-16 border-t border-[#5C554D]/30">
+    <footer className="bg-[#0B0B0B] text-[#F7F3EA] pt-16 pb-24 lg:pb-16 border-t border-[#1A1A1A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Newsletter Banner */}
-        <div className="border border-white/10 p-8 sm:p-10 mb-16 max-w-2xl mx-auto text-center">
-          <span className="text-[11px] uppercase tracking-widest text-[#999999] font-medium block mb-2">
-            Newsletter
+        <div className="border border-[#2A2A2A] bg-[#1A1A1A] p-8 sm:p-10 mb-16 max-w-2xl mx-auto text-center rounded-[2px]">
+          <span 
+            className="text-[11px] font-sans uppercase tracking-[0.15em] text-[#BF8F4A] font-semibold block mb-2"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          >
+            Exclusive Allocations
           </span>
-          <h3 className="font-serif text-xl sm:text-2xl text-white mb-2 font-normal">
-            New arrivals & allocations
+          <h3 
+            className="font-serif text-xl sm:text-2xl text-[#F7F3EA] mb-2 font-semibold"
+            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+          >
+            New Arrivals & Private Deals
           </h3>
-          <p className="text-xs text-[#999999] max-w-md mx-auto mb-6">
-            Receive updates on restocks, seasonal promotions, and newly imported designer and Middle Eastern fragrances.
+          <p className="text-xs text-[#8B877F] max-w-md mx-auto mb-6 font-sans">
+            Receive updates on restocks, seasonal promotions, and newly imported Middle Eastern and designer fragrances.
           </p>
 
           <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
@@ -42,15 +48,15 @@ export const Footer: React.FC = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Your email address"
-              className="flex-1 px-4 py-3 bg-white/5 border border-white/20 focus:border-white text-xs text-white placeholder:text-white/40 focus:outline-none"
+              className="flex-1 px-4 py-3 bg-[#0B0B0B] border border-[#2A2A2A] focus:border-[#BF8F4A] text-xs text-[#F7F3EA] placeholder:text-[#8B877F] focus:outline-none rounded-[2px] font-sans"
             />
             <button
               type="submit"
-              className="px-6 py-3 bg-white text-[#111111] hover:bg-neutral-200 text-xs font-medium tracking-wider uppercase transition-colors shrink-0 flex items-center justify-center gap-1.5"
+              className="px-6 py-3 bg-[#BF8F4A] hover:bg-[#AC7E3D] active:bg-[#996F34] text-[#0B0B0B] text-xs font-semibold tracking-wider uppercase transition-colors shrink-0 flex items-center justify-center gap-1.5 rounded-[2px] font-sans"
             >
               {subscribed ? (
                 <>
-                  <Check className="w-3.5 h-3.5" />
+                  <Check className="w-3.5 h-3.5 stroke-[2]" />
                   <span>Subscribed</span>
                 </>
               ) : (
@@ -59,62 +65,65 @@ export const Footer: React.FC = () => {
             </button>
           </form>
           {subscribed && (
-            <p className="text-xs text-white/80 mt-3 animate-fadeIn">
-              Thank you for subscribing.
+            <p className="text-xs text-[#EAD1A6] mt-3 font-sans">
+              Thank you for subscribing to FragDealz allocations.
             </p>
           )}
         </div>
 
         {/* 4 Main Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 pb-12 border-b border-white/10 text-xs">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 pb-12 border-b border-[#1A1A1A] text-xs font-sans">
           {/* Column 1: SHOP */}
           <div>
-            <h4 className="font-serif text-sm font-bold tracking-widest uppercase text-white mb-4">
-              SHOP
+            <h4 
+              className="font-serif text-sm font-bold tracking-widest uppercase text-[#F7F3EA] mb-4"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              Shop Fragrances
             </h4>
-            <ul className="space-y-2.5 text-[#EDE9E2]/70">
+            <ul className="space-y-2.5 text-[#8B877F]">
               <li>
-                <button onClick={() => navigateToShop({})} className="hover:text-[#B89B5E] transition-colors">
+                <button onClick={() => navigateToShop({})} className="hover:text-[#BF8F4A] transition-colors">
                   All Perfumes
                 </button>
               </li>
               <li>
-                <button onClick={() => navigateToShop({ gender: ['Men'] })} className="hover:text-[#B89B5E] transition-colors">
+                <button onClick={() => navigateToShop({ gender: ['Men'] })} className="hover:text-[#BF8F4A] transition-colors">
                   Men's Fragrances
                 </button>
               </li>
               <li>
-                <button onClick={() => navigateToShop({ gender: ['Women'] })} className="hover:text-[#B89B5E] transition-colors">
+                <button onClick={() => navigateToShop({ gender: ['Women'] })} className="hover:text-[#BF8F4A] transition-colors">
                   Women's Fragrances
                 </button>
               </li>
               <li>
-                <button onClick={() => navigateToShop({ gender: ['Unisex'] })} className="hover:text-[#B89B5E] transition-colors">
+                <button onClick={() => navigateToShop({ gender: ['Unisex'] })} className="hover:text-[#BF8F4A] transition-colors">
                   Unisex Fragrances
                 </button>
               </li>
               <li>
-                <button onClick={() => navigateToShop({ category: ['Arabic'] })} className="hover:text-[#B89B5E] transition-colors">
+                <button onClick={() => navigateToShop({ category: ['Arabic'] })} className="hover:text-[#BF8F4A] transition-colors">
                   Arabic Fragrances
                 </button>
               </li>
               <li>
-                <button onClick={() => navigateToShop({ sortBy: 'bestselling' })} className="hover:text-white transition-colors">
+                <button onClick={() => navigateToShop({ sortBy: 'bestselling' })} className="hover:text-[#BF8F4A] transition-colors">
                   Bestsellers
                 </button>
               </li>
               <li>
-                <button onClick={() => navigateToShop({ concentration: ['Parfum / Extrait'] })} className="hover:text-white transition-colors">
+                <button onClick={() => navigateToShop({ concentration: ['Parfum / Extrait'] })} className="hover:text-[#BF8F4A] transition-colors">
                   Parfum & Extraits
                 </button>
               </li>
               <li>
-                <button onClick={() => navigateToShop({ sortBy: 'newest' })} className="hover:text-white transition-colors">
+                <button onClick={() => navigateToShop({ sortBy: 'newest' })} className="hover:text-[#BF8F4A] transition-colors">
                   New Arrivals
                 </button>
               </li>
               <li>
-                <button onClick={() => navigateToShop({ onSaleOnly: true })} className="hover:text-white transition-colors">
+                <button onClick={() => navigateToShop({ onSaleOnly: true })} className="hover:text-[#BF8F4A] transition-colors font-medium text-[#EAD1A6]">
                   Special Offers
                 </button>
               </li>
@@ -123,15 +132,18 @@ export const Footer: React.FC = () => {
 
           {/* Column 2: POPULAR BRANDS */}
           <div>
-            <h4 className="font-serif text-sm font-bold tracking-widest uppercase text-white mb-4">
-              POPULAR BRANDS
+            <h4 
+              className="font-serif text-sm font-bold tracking-widest uppercase text-[#F7F3EA] mb-4"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              Fragrance Houses
             </h4>
-            <ul className="space-y-2.5 text-[#EDE9E2]/70">
+            <ul className="space-y-2.5 text-[#8B877F]">
               {BRANDS.map(brand => (
                 <li key={brand.id}>
                   <button 
                     onClick={() => navigateToBrand(brand.slug)} 
-                    className="hover:text-[#B89B5E] transition-colors"
+                    className="hover:text-[#BF8F4A] transition-colors"
                   >
                     {brand.name}
                   </button>
@@ -142,42 +154,45 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: HELP & SUPPORT */}
           <div>
-            <h4 className="font-serif text-sm font-bold tracking-widest uppercase text-white mb-4">
-              HELP & SUPPORT
+            <h4 
+              className="font-serif text-sm font-bold tracking-widest uppercase text-[#F7F3EA] mb-4"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              Help & Support
             </h4>
-            <ul className="space-y-2.5 text-[#EDE9E2]/70">
+            <ul className="space-y-2.5 text-[#8B877F]">
               <li>
-                <button onClick={() => setIsAccountOpen(true)} className="hover:text-[#B89B5E] transition-colors">
+                <button onClick={() => setIsAccountOpen(true)} className="hover:text-[#BF8F4A] transition-colors">
                   Track Your Order
                 </button>
               </li>
               <li>
-                <span className="hover:text-[#B89B5E] transition-colors cursor-pointer">
+                <span className="hover:text-[#BF8F4A] transition-colors cursor-pointer">
                   Shipping & Packaging Policy
                 </span>
               </li>
               <li>
-                <span className="hover:text-[#B89B5E] transition-colors cursor-pointer">
-                  Returns & Damage Replacement
+                <span className="hover:text-[#BF8F4A] transition-colors cursor-pointer">
+                  Damage Replacement Charter
                 </span>
               </li>
               <li>
-                <span className="hover:text-[#B89B5E] transition-colors cursor-pointer">
-                  Storage & Batch Care
+                <span className="hover:text-[#BF8F4A] transition-colors cursor-pointer">
+                  Climate Storage Standards
                 </span>
               </li>
               <li>
-                <span className="hover:text-[#B89B5E] transition-colors cursor-pointer">
+                <span className="hover:text-[#BF8F4A] transition-colors cursor-pointer">
                   Frequently Asked Questions
                 </span>
               </li>
-              <li className="pt-2 text-[11px] text-white/50 space-y-1">
-                <div className="flex items-center gap-1.5 text-white/80">
-                  <Phone className="w-3.5 h-3.5 text-[#B89B5E]" />
+              <li className="pt-2 text-[11px] text-[#8B877F] space-y-1.5">
+                <div className="flex items-center gap-1.5 text-[#EAD1A6]">
+                  <Phone className="w-3.5 h-3.5 text-[#BF8F4A]" />
                   <span>Mon - Sat, 10 AM - 7 PM IST</span>
                 </div>
-                <div className="flex items-center gap-1.5 text-white/80">
-                  <MapPin className="w-3.5 h-3.5 text-[#B89B5E]" />
+                <div className="flex items-center gap-1.5 text-[#EAD1A6]">
+                  <MapPin className="w-3.5 h-3.5 text-[#BF8F4A]" />
                   <span>Mumbai & Dubai Hubs</span>
                 </div>
               </li>
@@ -186,60 +201,63 @@ export const Footer: React.FC = () => {
 
           {/* Column 4: ABOUT & AUTHENTICITY */}
           <div>
-            <div className="mb-3">
-              <FragDealzLogo className="h-6 w-auto" />
+            <div className="mb-4">
+              <FragDealzLogo className="h-7 w-auto" />
             </div>
-            <h4 className="font-serif text-sm font-bold tracking-widest uppercase text-white mb-4">
-              ABOUT FRAGDEALZ
+            <h4 
+              className="font-serif text-sm font-bold tracking-widest uppercase text-[#F7F3EA] mb-3"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              About FragDealz
             </h4>
-            <ul className="space-y-2.5 text-[#EDE9E2]/70">
+            <ul className="space-y-2.5 text-[#8B877F]">
               <li>
-                <span className="hover:text-[#B89B5E] transition-colors cursor-pointer">
+                <span className="hover:text-[#BF8F4A] transition-colors cursor-pointer">
                   Our Retail Story
                 </span>
               </li>
               <li>
-                <button onClick={() => setIsAuthenticityModalOpen(true)} className="text-[#B89B5E] hover:underline transition-colors font-medium flex items-center gap-1">
+                <button onClick={() => setIsAuthenticityModalOpen(true)} className="text-[#BF8F4A] hover:underline transition-colors font-medium flex items-center gap-1">
                   <ShieldCheck className="w-3.5 h-3.5" />
                   <span>Authenticity Guarantee</span>
                 </button>
               </li>
               <li>
-                <span className="hover:text-[#B89B5E] transition-colors cursor-pointer">
+                <span className="hover:text-[#BF8F4A] transition-colors cursor-pointer">
                   Distribution Transparency
                 </span>
               </li>
               <li>
-                <span className="hover:text-[#B89B5E] transition-colors cursor-pointer">
+                <span className="hover:text-[#BF8F4A] transition-colors cursor-pointer">
                   Privacy Policy
                 </span>
               </li>
               <li>
-                <span className="hover:text-[#B89B5E] transition-colors cursor-pointer">
+                <span className="hover:text-[#BF8F4A] transition-colors cursor-pointer">
                   Terms of Service
                 </span>
               </li>
             </ul>
 
-            <div className="mt-6 pt-4 border-t border-white/10">
-              <span className="text-[10px] uppercase tracking-wider text-white/50 block mb-2">
+            <div className="mt-6 pt-4 border-t border-[#1A1A1A]">
+              <span className="text-[10px] uppercase tracking-wider text-[#8B877F] block mb-2">
                 Connect With Us
               </span>
-              <div className="flex items-center gap-3 text-white/70">
-                <span className="hover:text-[#B89B5E] cursor-pointer"><Instagram className="w-4 h-4" /></span>
-                <span className="hover:text-[#B89B5E] cursor-pointer"><Facebook className="w-4 h-4" /></span>
-                <span className="hover:text-[#B89B5E] cursor-pointer"><Twitter className="w-4 h-4" /></span>
+              <div className="flex items-center gap-3 text-[#EAD1A6]">
+                <span className="hover:text-[#BF8F4A] cursor-pointer"><Instagram className="w-4 h-4" /></span>
+                <span className="hover:text-[#BF8F4A] cursor-pointer"><Facebook className="w-4 h-4" /></span>
+                <span className="hover:text-[#BF8F4A] cursor-pointer"><Twitter className="w-4 h-4" /></span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom copyright & disclaimer */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#EDE9E2]/50 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#8B877F] gap-4 font-sans">
           <p>
-            © {new Date().getFullYear()} FragDealz. All rights reserved. Authentic multi-brand fragrance retailer.
+            © {new Date().getFullYear()} FragDealz. All rights reserved. Premium multi-brand fragrance retailer.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 text-center sm:text-right">
             <span>All brand trademarks (French Avenue, Rasasi, Lattafa, Afnan, Ahmed Al Maghribi, Armaf, Riffs) belong to their respective proprietary houses.</span>
           </div>
         </div>

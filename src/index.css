@@ -1,40 +1,42 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --color-luxury-black: #111111;
-  --color-luxury-warmwhite: #FAF9F6;
-  --color-luxury-beige: #EDE9E2;
-  --color-luxury-taupe: #5C554D;
-  --color-luxury-gold: #B89B5E;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --color-obsidian: #0B0B0B;
+  --color-charcoal: #1A1A1A;
+  --color-gold: #BF8F4A;
+  --color-champagne: #EAD1A6;
+  --color-ivory: #F7F3EA;
+  --color-warmgray: #8B877F;
 }
 
 @layer base {
   body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    color: #111111;
-    background-color: #FAF9F6;
+    font-family: 'Inter', sans-serif;
+    color: #0B0B0B;
+    background-color: #F7F3EA;
+    line-height: 1.6;
   }
 
   h1, h2, h3, .font-serif {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
   }
 }
 
-/* Custom subtle scrollbar */
+/* Custom restrained scrollbar in Charcoal and FragDealz Gold */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAF9F6;
+  background: #0B0B0B;
 }
 ::-webkit-scrollbar-thumb {
-  background: #EDE9E2;
-  border-radius: 3px;
+  background: #1A1A1A;
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #B89B5E;
+  background: #BF8F4A;
 }
-

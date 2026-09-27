@@ -10,22 +10,25 @@ export const NewArrivals: React.FC = () => {
   const displayItems = newArrivals.length >= 4 ? newArrivals : PRODUCTS.slice(0, 8);
 
   return (
-    <section className="py-14 sm:py-20 bg-[#FAF9F6] border-b border-[#E8E5DF]">
+    <section className="py-14 sm:py-20 bg-[#F7F3EA] border-b border-[#E5DFD5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-8 sm:mb-12 border-b border-[#E8E5DF] pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-8 sm:mb-12 border-b border-[#E5DFD5] pb-4">
           <div>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#111111] font-normal tracking-tight">
-              New arrivals
+            <h2 
+              className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#0B0B0B] font-semibold tracking-tight"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              New Arrivals & Restocks
             </h2>
-            <p className="mt-1 text-xs sm:text-sm text-[#777777]">
-              Recent imports and latest releases from French Avenue, Rasasi, Lattafa, Afnan, and Ahmed Al Maghribi.
+            <p className="mt-1 text-xs sm:text-sm text-[#8B877F] font-sans">
+              Recent factory imports and newest releases from our 7 authorized houses.
             </p>
           </div>
 
           <button
             id="new-arrivals-view-all-top"
             onClick={() => navigateToShop({ sortBy: 'newest' })}
-            className="mt-3 sm:mt-0 text-xs font-medium tracking-widest text-[#111111] hover:text-[#777777] transition-colors uppercase"
+            className="mt-3 sm:mt-0 text-xs font-semibold tracking-wider text-[#0B0B0B] hover:text-[#BF8F4A] transition-colors uppercase font-sans"
           >
             View all new arrivals →
           </button>

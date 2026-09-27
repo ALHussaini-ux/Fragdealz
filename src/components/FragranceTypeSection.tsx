@@ -15,13 +15,16 @@ export const FragranceTypeSection: React.FC = () => {
   };
 
   return (
-    <section className="py-14 sm:py-20 lg:py-24 bg-[#FAF9F6] border-b border-[#E8E5DF]">
+    <section className="py-14 sm:py-20 lg:py-24 bg-[#F7F3EA] border-b border-[#E5DFD5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 sm:mb-12 border-b border-[#E8E5DF] pb-4">
-          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#111111] font-normal tracking-tight">
-            Shop by concentration
+        <div className="mb-8 sm:mb-12 border-b border-[#E5DFD5] pb-4">
+          <h2 
+            className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#0B0B0B] font-semibold tracking-tight"
+            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+          >
+            Shop by Concentration
           </h2>
-          <p className="mt-1 text-xs sm:text-sm text-[#777777]">
+          <p className="mt-1 text-xs sm:text-sm text-[#8B877F] font-sans">
             Understand the oil percentage and longevity behind each formulation.
           </p>
         </div>
@@ -32,32 +35,35 @@ export const FragranceTypeSection: React.FC = () => {
               key={idx}
               id={`fragrance-type-card-${idx}`}
               onClick={() => handleConcentrationClick(type.name)}
-              className="group bg-white border border-[#E8E5DF] hover:border-[#111111] p-5 transition-colors cursor-pointer flex flex-col justify-between"
+              className="group bg-white border border-[#E5DFD5] hover:border-[#BF8F4A] rounded-[2px] p-5 transition-colors cursor-pointer flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-mono text-[#777777] font-medium">
+                <div className="flex items-center justify-between mb-3 font-sans">
+                  <span className="text-xs font-semibold text-[#8B877F]">
                     {type.abbreviation}
                   </span>
-                  <span className="text-xs text-[#111111] font-medium">
+                  <span className="text-xs text-[#BF8F4A] font-semibold">
                     {type.oilPercentage}
                   </span>
                 </div>
 
-                <h3 className="font-serif text-lg font-normal text-[#111111] mb-2">
+                <h3 
+                  className="font-serif text-lg font-bold text-[#0B0B0B] mb-2"
+                  style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+                >
                   {type.name}
                 </h3>
 
-                <p className="text-xs text-[#777777] leading-relaxed mb-4">
+                <p className="text-xs text-[#8B877F] leading-relaxed mb-4 font-sans">
                   {type.description}
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-[#F1EFEA] flex items-center justify-between">
-                <span className="text-[11px] font-medium tracking-wider uppercase text-[#111111] group-hover:underline">
+              <div className="pt-3 border-t border-[#F0EBE1] flex items-center justify-between font-sans">
+                <span className="text-[11px] font-semibold tracking-wider uppercase text-[#0B0B0B] group-hover:text-[#BF8F4A]">
                   Explore
                 </span>
-                <span className="text-xs text-[#111111]">→</span>
+                <span className="text-xs text-[#BF8F4A]">→</span>
               </div>
             </div>
           ))}
@@ -66,4 +72,3 @@ export const FragranceTypeSection: React.FC = () => {
     </section>
   );
 };
-

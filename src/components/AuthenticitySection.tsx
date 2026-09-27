@@ -24,24 +24,30 @@ export const AuthenticitySection: React.FC = () => {
   ];
 
   return (
-    <section className="py-14 sm:py-20 lg:py-24 bg-white border-b border-[#E8E5DF]">
+    <section className="py-14 sm:py-20 lg:py-24 bg-[#1A1A1A] border-b border-[#2A2A2A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="border border-[#E8E5DF] p-8 sm:p-12 bg-[#FAF9F6]">
+        <div className="border border-[#2A2A2A] p-8 sm:p-12 bg-[#0B0B0B] rounded-[2px]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             <div className="lg:col-span-5">
-              <span className="text-xs uppercase tracking-widest text-[#777777] font-medium block mb-2">
+              <span 
+                className="text-xs uppercase tracking-widest text-[#BF8F4A] font-semibold block mb-2 font-sans"
+                style={{ fontFamily: "'Inter', sans-serif" }}
+              >
                 Authentication Guarantee
               </span>
-              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#111111] font-normal tracking-tight mb-4">
-                Authenticity & batch integrity
+              <h2 
+                className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#F7F3EA] font-semibold tracking-tight mb-4"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
+                Authenticity & Batch Integrity
               </h2>
-              <p className="text-xs sm:text-sm text-[#777777] leading-relaxed mb-6">
-                As an independent multi-brand fragrance retailer, we maintain strict verification protocols for every bottle entering our distribution facility. We guarantee 100% original flacons with unbroken seals.
+              <p className="text-xs sm:text-sm text-[#8B877F] leading-relaxed mb-6 font-sans">
+                As an independent multi-brand fragrance retailer, we maintain strict verification protocols for every bottle entering our distribution facility. We guarantee 100% original flacons with unbroken factory cellophane.
               </p>
               <button
                 id="authenticity-read-policy-btn"
                 onClick={() => setIsAuthenticityModalOpen(true)}
-                className="text-xs font-medium uppercase tracking-widest text-[#111111] hover:underline"
+                className="text-xs font-semibold uppercase tracking-widest text-[#BF8F4A] hover:text-[#EAD1A6] font-sans transition-colors"
               >
                 Read our verification standards →
               </button>
@@ -51,12 +57,15 @@ export const AuthenticitySection: React.FC = () => {
               {points.map((point, idx) => {
                 const Icon = point.icon;
                 return (
-                  <div key={idx} className="bg-white border border-[#E8E5DF] p-5">
-                    <Icon className="w-5 h-5 text-[#111111] mb-3 stroke-[1.5]" />
-                    <h4 className="text-sm font-serif font-normal text-[#111111] mb-2">
+                  <div key={idx} className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-[2px] p-5">
+                    <Icon className="w-5 h-5 text-[#BF8F4A] mb-3 stroke-[1.5]" />
+                    <h4 
+                      className="text-sm font-serif font-bold text-[#F7F3EA] mb-2"
+                      style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+                    >
                       {point.title}
                     </h4>
-                    <p className="text-xs text-[#777777] leading-relaxed">
+                    <p className="text-xs text-[#8B877F] leading-relaxed font-sans">
                       {point.desc}
                     </p>
                   </div>
@@ -69,4 +78,3 @@ export const AuthenticitySection: React.FC = () => {
     </section>
   );
 };
-

@@ -2,99 +2,85 @@ import React from 'react';
 
 interface FragDealzLogoProps {
   className?: string;
-  variant?: 'light' | 'dark' | 'gold';
+  symbolOnly?: boolean;
   showSubtitle?: boolean;
+  onDarkPlate?: boolean;
 }
 
 export const FragDealzLogo: React.FC<FragDealzLogoProps> = ({ 
   className = 'h-8 sm:h-9 w-auto',
-  variant = 'gold',
-  showSubtitle = false
+  symbolOnly = false,
+  showSubtitle = false,
+  onDarkPlate = false,
 }) => {
-  return (
-    <div className="flex flex-col items-start select-none">
+  const logoContent = (
+    <div className="flex items-center gap-2.5 select-none shrink-0">
+      {/* Bespoke Interlocking "F" & "D" Lettermark with Perfume Stopper Detail */}
       <svg
-        viewBox="0 0 620 160"
-        className={className}
+        viewBox="0 0 48 48"
+        className="h-8 sm:h-9 w-auto shrink-0"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        aria-label="FragDealz"
-        role="img"
+        aria-hidden="true"
       >
         <defs>
-          {/* Primary Champagne to Warm Amber Gold Gradient */}
-          <linearGradient id="fdGoldMain" x1="0%" y1="20%" x2="100%" y2="80%">
-            <stop offset="0%" stopColor="#FFF2D6" />
-            <stop offset="15%" stopColor="#F7DF9E" />
-            <stop offset="35%" stopColor="#E2B75E" />
-            <stop offset="50%" stopColor="#FDE19E" />
-            <stop offset="68%" stopColor="#C9861E" />
-            <stop offset="85%" stopColor="#F9DB8C" />
-            <stop offset="100%" stopColor="#A86E14" />
+          {/* Exact FragDealz Warm Metallic Gold Gradient */}
+          <linearGradient id="fdGoldMark" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#EAD1A6" />
+            <stop offset="35%" stopColor="#D4A86A" />
+            <stop offset="70%" stopColor="#BF8F4A" />
+            <stop offset="100%" stopColor="#9E7334" />
           </linearGradient>
-
-          {/* Deep Amber Accent Gradient for the Capital 'D' */}
-          <linearGradient id="fdGoldD" x1="10%" y1="10%" x2="90%" y2="90%">
-            <stop offset="0%" stopColor="#F7DB9A" />
-            <stop offset="25%" stopColor="#E0A638" />
-            <stop offset="50%" stopColor="#BC7512" />
-            <stop offset="75%" stopColor="#FCE3A1" />
-            <stop offset="100%" stopColor="#965809" />
-          </linearGradient>
-
-          {/* Subtle 3D Bevel Shadow filter */}
-          <filter id="fdMetallicDepth" x="-10%" y="-10%" width="125%" height="130%">
-            <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" floodColor="#422904" floodOpacity="0.3" />
-          </filter>
         </defs>
 
-        <g filter="url(#fdMetallicDepth)">
-          {/* Frag */}
-          <text
-            x="8"
-            y="124"
-            fontFamily="'Bodoni Moda', 'Cormorant Garamond', 'Didot', 'Playfair Display', serif"
-            fontSize="140"
-            fontWeight="700"
-            letterSpacing="-2px"
-            fill="url(#fdGoldMain)"
-          >
-            Frag
-          </text>
+        {/* Perfume Flacon Stopper Crown */}
+        <rect x="20" y="3" width="8" height="3" rx="0.5" fill="url(#fdGoldMark)" />
+        <path d="M22 6 L26 6 L25 8 L23 8 Z" fill="url(#fdGoldMark)" />
+        <rect x="23" y="8" width="2" height="2" fill="url(#fdGoldMark)" />
 
-          {/* Capital D with deep golden gradient */}
-          <text
-            x="292"
-            y="124"
-            fontFamily="'Bodoni Moda', 'Cormorant Garamond', 'Didot', 'Playfair Display', serif"
-            fontSize="145"
-            fontWeight="700"
-            letterSpacing="-4px"
-            fill="url(#fdGoldD)"
-          >
-            D
-          </text>
+        {/* Interlocking F & D Monogram */}
+        {/* 'F' vertical stem & horizontal arms */}
+        <rect x="11" y="10" width="3.5" height="32" rx="0.5" fill="url(#fdGoldMark)" />
+        <path d="M11 11.5 H28 C28.5 11.5 28.5 14.5 28 14.5 H14.5 V22.5 H25 C25.5 22.5 25.5 25.5 25 25.5 H14.5 V42 H11 V11.5 Z" fill="url(#fdGoldMark)" />
 
-          {/* ealz with bright reflective gold */}
-          <text
-            x="414"
-            y="124"
-            fontFamily="'Bodoni Moda', 'Cormorant Garamond', 'Didot', 'Playfair Display', serif"
-            fontSize="140"
-            fontWeight="700"
-            letterSpacing="-3px"
-            fill="url(#fdGoldMain)"
-          >
-            ealz
-          </text>
-        </g>
+        {/* Interlocking 'D' looping through the F */}
+        <path
+          d="M21 16 H29.5 C36.5 16 41 20.5 41 27.5 C41 34.5 36.5 39 29.5 39 H21 V35.5 H29.5 C34.5 35.5 37.5 32 37.5 27.5 C37.5 23 34.5 19.5 29.5 19.5 H21 V16 Z"
+          fill="url(#fdGoldMark)"
+        />
+        {/* Subtle inner stopper neck line */}
+        <circle cx="24" cy="4.5" r="0.75" fill="#0B0B0B" />
       </svg>
 
-      {showSubtitle && (
-        <span className="text-[9px] tracking-[0.22em] text-[#777777] uppercase font-light pl-1 -mt-0.5">
-          Fine Fragrance Purveyor
-        </span>
+      {/* Matching "FragDealz" Wordmark in Playfair Display */}
+      {!symbolOnly && (
+        <div className="flex flex-col">
+          <span 
+            className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#BF8F4A] leading-none"
+            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+          >
+            Frag<span className="text-[#EAD1A6] font-semibold">Dealz</span>
+          </span>
+          {showSubtitle && (
+            <span 
+              className="text-[9px] font-sans font-medium uppercase tracking-[0.2em] text-[#8B877F] mt-1 leading-none"
+              style={{ fontFamily: "'Inter', sans-serif" }}
+            >
+              Curated Fragrance Purveyor
+            </span>
+          )}
+        </div>
       )}
     </div>
   );
+
+  if (onDarkPlate) {
+    return (
+      <div className="bg-[#0B0B0B] border border-[#1A1A1A] px-3 py-1.5 rounded-[2px] inline-flex items-center shadow-xs">
+        {logoContent}
+      </div>
+    );
+  }
+
+  return logoContent;
 };

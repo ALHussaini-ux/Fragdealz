@@ -11,14 +11,17 @@ export const FragranceNotesGrid: React.FC = () => {
   };
 
   return (
-    <section className="py-14 sm:py-20 lg:py-24 bg-white border-b border-[#E8E5DF]">
+    <section className="py-14 sm:py-20 lg:py-24 bg-[#F7F3EA] border-b border-[#E5DFD5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 sm:mb-12 border-b border-[#E8E5DF] pb-4 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
+        <div className="mb-8 sm:mb-12 border-b border-[#E5DFD5] pb-4 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
           <div>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#111111] font-normal tracking-tight">
-              Explore by olfactory profile
+            <h2 
+              className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#0B0B0B] font-semibold tracking-tight"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              Explore by Olfactory Profile
             </h2>
-            <p className="mt-1 text-xs sm:text-sm text-[#777777]">
+            <p className="mt-1 text-xs sm:text-sm text-[#8B877F] font-sans">
               Browse fragrances crafted around signature accords and primary raw materials.
             </p>
           </div>
@@ -30,17 +33,20 @@ export const FragranceNotesGrid: React.FC = () => {
               key={note.name}
               id={`note-card-${note.name.toLowerCase()}`}
               onClick={() => handleNoteClick(note.name)}
-              className="p-4 sm:p-5 bg-[#FAF9F6] border border-[#E8E5DF] hover:border-[#111111] text-left transition-colors flex flex-col justify-between min-h-[110px]"
+              className="group p-4 sm:p-5 bg-white border border-[#E5DFD5] hover:border-[#BF8F4A] rounded-[2px] text-left transition-colors flex flex-col justify-between min-h-[110px]"
             >
               <div>
-                <span className="font-serif text-sm sm:text-base text-[#111111] font-normal block mb-1">
+                <span 
+                  className="font-serif text-sm sm:text-base text-[#0B0B0B] font-bold block mb-1"
+                  style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+                >
                   {note.name}
                 </span>
-                <span className="text-[11px] text-[#777777] line-clamp-2 leading-relaxed">
+                <span className="text-[11px] text-[#8B877F] line-clamp-2 leading-relaxed font-sans">
                   {note.vibe}
                 </span>
               </div>
-              <span className="text-[10px] uppercase tracking-wider text-[#111111] font-medium pt-3 mt-2 border-t border-[#E8E5DF]/60 block">
+              <span className="text-[10px] uppercase tracking-wider text-[#0B0B0B] group-hover:text-[#BF8F4A] font-semibold pt-3 mt-2 border-t border-[#F0EBE1] block font-sans transition-colors">
                 View scents →
               </span>
             </button>
@@ -50,4 +56,3 @@ export const FragranceNotesGrid: React.FC = () => {
     </section>
   );
 };
-
